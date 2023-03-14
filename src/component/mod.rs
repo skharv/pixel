@@ -21,6 +21,6 @@ pub struct Colour {
 }
 
 #[derive(Component)]
-pub struct TurnAngle {
+pub struct Angle {
     pub a: f32,
 }
