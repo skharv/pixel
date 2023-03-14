@@ -6,21 +6,21 @@ use crate::component;
 use crate::bundle;
 
 pub fn spawn(mut command: Commands ) {
-    for _ in 0..100000 {
+    for _ in 0..50000 {
         let px = rand::thread_rng().gen_range(0..WIDTH/2); 
         let py = rand::thread_rng().gen_range(0..HEIGHT/2);
 
         let vx = rand::thread_rng().gen_range(0..WIDTH)/10;
         let vy = rand::thread_rng().gen_range(0..HEIGHT)/10;
 
-        let r = rand::thread_rng().gen_range(0..255);
-        let g = rand::thread_rng().gen_range(0..255);
-        let b = rand::thread_rng().gen_range(0..255);
+        let cr = rand::thread_rng().gen_range(0..255);
+        let cg = rand::thread_rng().gen_range(0..255);
+        let cb = rand::thread_rng().gen_range(0..255);
 
     command.spawn(bundle::PixelBundle{
         position: component::Position {x: px as f32, y: py as f32},
         velocity: component::Velocity {x: vx as f32, y: vy as f32},
-        colour: component::Colour { r: r, g: g, b: b, a: 255 },
+        colour: component::Colour { r: cr, g: cg, b: cb, a: 255 },
     });
     }
 }
