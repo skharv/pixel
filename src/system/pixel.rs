@@ -16,9 +16,12 @@ pub fn draw(
 
     for(position, color) in query.iter() {
         let index = ((((position.y as i32) * 4) * WIDTH) + (position.x as i32) * 4) as usize;
-        frame[index] = color.r;
-        frame[index+1] = color.g;
-        frame[index+2] = color.b;
-        frame[index+3] = color.g;
+
+        if index < frame.iter().count(){
+            frame[index] = color.r;
+            frame[index+1] = color.g;
+            frame[index+2] = color.b;
+            frame[index+3] = color.g;
+        }
     } 
 }

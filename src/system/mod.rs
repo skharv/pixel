@@ -18,6 +18,7 @@ impl Plugin for GamePlugin {
         .add_system_to_stage(PixelsStage::Draw, pixel::draw.after(pixel::clear))
         .add_startup_system(unit::spawn)
         .add_system(unit::movement)
+        .add_system(unit::turn)
         .run();
     }
 }

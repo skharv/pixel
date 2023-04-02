@@ -21,6 +21,32 @@ pub struct Colour {
 }
 
 #[derive(Component)]
-pub struct Angle {
-    pub a: f32,
+pub struct TurnRate {
+    pub angle: f32,
+}
+
+#[derive(Component)]
+pub struct Facing {
+    pub angle: f32,
+}
+
+#[derive(Component)]
+pub struct Target {
+    pub x: f32,
+    pub y: f32,
+}
+
+#[derive(Component)]
+pub struct Hunger {
+    pub value: f32,
+}
+
+#[derive(Component)]
+pub struct Anger {
+    pub value: f32,
+}
+
+#[derive(Component)]
+pub struct SightRange {
+    pub value: f32,
 }
